@@ -11,7 +11,7 @@ const Navbar = () => {
     <>
       <Nav>
         <NavLink to='/'>
-          <img src={require('../../images/logo.svg')} alt='logo' />
+          <img src={require('../../images/ReactLogo.png')} alt='logo' />
         </NavLink>
         <Bars />
         <NavMenu>
