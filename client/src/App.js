@@ -1,32 +1,24 @@
-import React, {useEffect,useState} from 'react'
+import React from 'react';
+import './App.css';
+import Navbar from './components/Navbar';
+import { BrowserRouter, Routes , Route } from 'react-router-dom';
+import Home from './pages';
+import D3 from './pages/D3';
+import PowerBI from './pages/PowerBI';
+import Data from './pages/Data';
 
 function App() {
-
-  const [backendData,setBackedData] = useState([{}])
-
-  useEffect(() => {
-    fetch("/api").then(
-      response => response.json()
-    ).then(
-      data => {
-        setBackedData(data)
-      }
-    )
-  }, [])
-
-  return(
-    <div>
-
-      {(typeof backendData.users === 'undefined') ? (
-        <p>Loading...</p>
-      ) : (
-        backendData.users.map((user, i) => (
-          <p key={i}>{user}</p>
-        ))
-      )}
-
-    </div>
-  )
+  return (
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route exact path='/' element={<Home/>} />
+        <Route path='/D3' element={<D3/>} />
+        <Route path='/PowerBI' element={<PowerBI/>} />
+        <Route path='/Data' element={<Data/>} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
