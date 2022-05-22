@@ -1,4 +1,7 @@
-import React from 'react';
+import React, {Component} from 'react';
+import FormFactura from '../components/FormFactura';
+import FormProducto from '../components/FormProducto';
+
 
 const Data = () => {
   return (
@@ -10,7 +13,9 @@ const Data = () => {
         height: '90vh'
       }}
     >
-      <h1>Data</h1>
+      <FormProducto/>
+      <FormFactura/>
+
     </div>
   );
 };
