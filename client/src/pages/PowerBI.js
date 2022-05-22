@@ -10,7 +10,7 @@ const PowerBI = () => {
         height: '90vh'
       }}
     >
-      <h1>PowerBI</h1>
+      <iframe title="FinancialSample2 - Página 1" width="1024" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiZDQwYTg3OTctZGUxYy00NDkyLTg4OTMtOWU1YjRlNzcxZjRkIiwidCI6ImEyMWY0YzI3LTMzZTUtNGNhZC1hMWZmLTYxNjdiZDlmOWE0NSIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
     </div>
   );
 };
