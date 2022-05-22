@@ -2,3 +2,17 @@
     padding: 15px;
     margin: 10px 0px;
 }
+
+.formInput {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input { 
+    padding: 15px;
+    margin: 10px 0px;
+    border-radius: 5px;
+    border: 1px solid;
+    width: auto;
+}

@@ -4,6 +4,11 @@ import FormProducto from '../components/FormProducto';
 
 
 const Data = () => {
+  const [facturaVisible, setFacturaVisible] = React.useState(true);
+  const [productoVisible, setProductoVisible] = React.useState(false);
+  
+
+
   return (
     <div
       style={{
@@ -13,9 +18,19 @@ const Data = () => {
         height: '90vh'
       }}
     >
-      <FormProducto/>
-      <FormFactura/>
-
+      <div>
+        <button className="botonSwitch" onClick={() => {
+          setFacturaVisible(!facturaVisible)
+          setProductoVisible(!productoVisible)
+          }}>{facturaVisible ? 'MostrarFormProducto': 'MostrarFormFactura'}
+        </button>
+      </div>
+      <div>
+        {facturaVisible ? <FormFactura/> : <FormProducto/>}
+      </div>
+     
+    
+    
     </div>
   );
 };
