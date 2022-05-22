@@ -6,6 +6,8 @@ const FormProducto = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         const data = new FormData(e.target)
+        const formatedData = Object.fromEntries(data.entries())
+        console.log(formatedData)
     }
 
     return (
@@ -13,7 +15,7 @@ const FormProducto = () => {
            <h1> Ingresar Producto</h1>
             <form onSubmit={handleSubmit}>
                 <FormInput name="producto" placeholder="Nombre Producto"/>
-                <button>Submit</button>
+                <button className="botonSubmit">Submit</button>
             </form>
        </div> 
         
