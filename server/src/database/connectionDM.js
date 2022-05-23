@@ -4,14 +4,14 @@ const dbSetting = {
     user: "Jorge",
     password: "pinomario98",
     server: "localhost",
-    database: "VentasDM",
+    database: "Retail_Analysis",
     options: {
         encrypt: true,
         trustServerCertificate: true
     }
 }
 
-async function getConnectionDM () {
+export async function getConnectionDM () {
     try {
         const pool = await sql.connect(dbSetting)
         return pool
@@ -19,5 +19,3 @@ async function getConnectionDM () {
         console.log(error)
     }
 }
-
-getConnectionDM()
