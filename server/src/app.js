@@ -1,7 +1,7 @@
 import express from 'express'
 import config from './config'
 
-import Fact_VentasRoutes from './routes/Fact_Ventas.routes'
+import Fact_VentasRoutes from './routes/Fact_Sales.routes'
 
 const app = express()
 
