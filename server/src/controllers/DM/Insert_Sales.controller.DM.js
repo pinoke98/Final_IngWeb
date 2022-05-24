@@ -3,13 +3,16 @@ import sql from 'mssql'
 
 export const intertNew_Sale =  async (req, res) => { 
 
-    const {Date, Chain, Postcode , Category, TotalUnits, SalePrice, CostPrice } = req.body
+    const {Date, Chain, Category, TotalUnits, SalePrice, CostPrice } = req.body
+    const Postcode = 3066;
 
-    console.log(req.body)
+    console.log(Date, Chain, Postcode)
 
     const pool = await getConnectionDM();
-    const results =  await pool.request()
-    .input("Date", sql.Date(), '2022-10-11')
+
+
+    const resultsInsFact =  await pool.request()
+    .input("Date", sql.Date(), Date)
     .input("Chain", sql.VarChar(50), Chain)
     .input("Postcode", sql.Int(), Postcode)
     .input("Category", sql.VarChar(50), Category)
@@ -20,6 +23,6 @@ export const intertNew_Sale =  async (req, res) => {
         "insert into Fact_Sales (Date,Chain,Postcode,Category,TotalUnits,SalePrice,CostPrice) values (@Date, @Chain, @Postcode, @Category, @TotalUnits, @SalePrice, @CostPrice)"
     );
 
-    res.json(results)
+    res.json(resultsInsFact)
 
 }
