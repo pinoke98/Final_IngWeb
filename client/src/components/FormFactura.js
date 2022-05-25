@@ -2,20 +2,13 @@ import React from "react";
 import FormInput from "./FormInput";
 import axios from 'axios'
 
-
 const FormFactura = () => {
-   
-    
-
+    console.log("Empezo")
     const handleSubmit = (e) => {
         e.preventDefault()
-
-
-
         const data = new FormData(e.target)
         const formatedData = Object.fromEntries(data.entries())
-        
-        if(formatedData.date == '' || formatedData.categoria == '') {
+        if(formatedData.date === '' || formatedData.categoria === '') {
             console.log('Algun campo esta vacio, porfavor llenarlo')
         }else{
             console.log({data: formatedData.date, chain :formatedData.chain})
@@ -40,15 +33,10 @@ const FormFactura = () => {
             .catch(function (error) {
                 console.log("Error Factura", error);
             });
-        }
-
-        
-        
-    }
-    
+        }      
+    }   
     return(
         <div>
-    
             <h1>Ingresar Factura</h1>
             <form onSubmit={handleSubmit}>
                 <FormInput type="date" name="date" placeholder="Fecha"/>
