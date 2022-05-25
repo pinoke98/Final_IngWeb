@@ -1,22 +1,26 @@
-import React from "react";
+import React, {useState} from "react";
 import FormInput from "./FormInput";
 import axios from 'axios'
 
 
-const FormFactura = () => {
+function  FormFactura ()  {
    
+
+    const [result, setResult] = useState("")
     
+    const a = 'holas'
 
     const handleSubmit = (e) => {
         e.preventDefault()
 
-
+        
 
         const data = new FormData(e.target)
         const formatedData = Object.fromEntries(data.entries())
         
         if(formatedData.date == '' || formatedData.categoria == '') {
-            console.log('Algun campo esta vacio, porfavor llenarlo')
+            console.log('Algun campo esta vacio, porfavor llenarlo', result)
+            setResult('Algun campo esta vacio, porfavor llenarlo')
         }else{
             console.log({data: formatedData.date, chain :formatedData.chain})
             axios.post('http://localhost:5000/insert_date',{
@@ -36,6 +40,7 @@ const FormFactura = () => {
                 CostPrice: formatedData.costprice
             }).then(function (response) {
                 console.log("Respuesta Factura: ",response);
+                setResult('Factura Ingresada')
             })
             .catch(function (error) {
                 console.log("Error Factura", error);
@@ -59,7 +64,7 @@ const FormFactura = () => {
                 <FormInput type="number" name="costprice" placeholder="Cost Price"/>
                 <button className="botonSubmit">Submit</button>
             </form>
-            <label id='resultado'></label>
+            <p >{result}</p>
         </div>
         
     ) 
