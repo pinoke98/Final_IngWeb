@@ -45,15 +45,10 @@ function  FormFactura ()  {
             .catch(function (error) {
                 console.log("Error Factura", error);
             });
-        }
-
-        
-        
-    }
-    
+        }      
+    }   
     return(
         <div>
-    
             <h1>Ingresar Factura</h1>
             <form onSubmit={handleSubmit}>
                 <FormInput type="date" name="date" placeholder="Fecha"/>

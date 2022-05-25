@@ -10,7 +10,7 @@ const PowerBI = () => {
         height: '90vh'
       }}
     >
-      <iframe title="FinancialSample2 - Página 1" width="1024" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiZDQwYTg3OTctZGUxYy00NDkyLTg4OTMtOWU1YjRlNzcxZjRkIiwidCI6ImEyMWY0YzI3LTMzZTUtNGNhZC1hMWZmLTYxNjdiZDlmOWE0NSIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
+      <iframe title="FinancialSample2" width="1024" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiZDQwYTg3OTctZGUxYy00NDkyLTg4OTMtOWU1YjRlNzcxZjRkIiwidCI6ImEyMWY0YzI3LTMzZTUtNGNhZC1hMWZmLTYxNjdiZDlmOWE0NSIsImMiOjR9&pageName=ReportSection" frameborder="0" allowFullScreen="true"></iframe>
     </div>
   );
 };
